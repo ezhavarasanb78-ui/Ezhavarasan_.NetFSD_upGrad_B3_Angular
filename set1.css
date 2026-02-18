@@ -1,0 +1,22 @@
+*{
+    font-family: 'Times New Roman', Times, serif;
+   
+}
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+}
+p {
+    font-size: 18px;
+    color: #333;
+}
+.yes{
+    align-items: center;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border: 1px solid gray;
+    width: 300px;
+}
