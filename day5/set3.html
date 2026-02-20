@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>counter app</h3>
+    <p id="count"></p>
+    <button id="inc">increament</button>
+    <button id="res">reset</button>
+    <script>
+        var count=0;
+        function inc(step)
+        {
+            count=count+step;
+            ud();
+        }
+        function res()
+        {
+            count=0;
+            ud();
+        }
+        function ud()
+        {
+            document.getElementById("count").innerHTML=count;
+        }
+        document.getElementById("inc").addEventListener("click",function(){
+          inc(1);
+        } );
+        document.getElementById("res").addEventListener("click",res);
+    </script>
+</body>
+</html>

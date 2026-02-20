@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Profile Manager</title>
+    <style>
+        #profileBox {
+            border: 2px solid black;
+            padding: 15px;
+            width: 250px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Student Profile</h2>
+
+    <div id="profileBox"></div>
+
+    <br>
+    <button id="updateMarksBtn">Update Marks</button>
+
+    <script src="app.js"></script>
+</body>
+<script>
+    let student = {
+    name: "Arun",
+    rollNo: 101,
+    marks: 85
+}
+function updateStudentProfile(studentObj) {
+    let profileDiv = document.getElementById("profileBox");
+
+    profileDiv.innerHTML = `
+        <h3>Student Details</h3>
+        <p><b>Name:</b> ${studentObj.name}</p>
+        <p><b>Roll No:</b> ${studentObj.rollNo}</p>
+        <p><b>Marks:</b> ${studentObj.marks}</p>
+    `;
+}
+
+function updateMarks(newMarks) {
+    student.marks = newMarks;  
+    updateStudentProfile(student); 
+}
+
+
+updateStudentProfile(student);
+
+
+document.getElementById("updateMarksBtn")
+        .addEventListener("click", function() {
+            updateMarks(95);   
+        });
+
+</script>
+</html>
