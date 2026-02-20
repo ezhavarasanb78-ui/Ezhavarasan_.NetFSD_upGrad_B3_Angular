@@ -1,0 +1,20 @@
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #2664c2;
+}
+.blogs{
+     display: flex;
+    flex-wrap: wrap;          
+    gap: 20px;                
+    padding: 20px;   
+    
+}
+.blog h2{
+    font-size: 20px;
+    color: aquamarine;
+}
+.blog p{
+    font-size: 14px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Discount Calculator</h3>
+    <p id="name"></p>
+    <script>
+        let amount=4500;
+        let dis=0;
+        let fa=0;
+        if(amount>=5000)
+        {
+            dis=amount*0.20;
+        }
+        else if(amount>=3000)
+        {
+            dis=amount*0.10;
+        }
+        else
+        {
+            dis=0;
+        }
+        fa=amount-dis;
+        document.getElementById("name").innerHTML=fa;
+    </script>
+</body>
+</html>
