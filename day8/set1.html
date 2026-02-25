@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .light
+        {
+            background-color: antiquewhite;
+
+        }
+        .dark
+        {
+            background-color: #121212;
+        }
+    </style>
+</head>
+<body>
+    <h2 style="color: aqua;"> Toggle Application</h2>
+    <button id="but">Click</button>
+    <script>
+        const body=document.body;
+        const b=document.getElementById("but");
+        body.className=localStorage.getItem("theme")  || "light";
+        b.addEventListener("click",function(){
+            body.className=body.className === "light" ? "dark" :"light";
+            localStorage.setItem("theme",body.className);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>TO DO List</h3>
+    <input id="id" type="text">
+    <button id="but">ADD</button>
+    <ul id="list"></ul>
+    <script>
+        const val=document.getElementById("id");
+        const but=document.getElementById("but");
+        const list=document.getElementById("list");
+
+        function add()
+        {
+            const li=document.createElement("li");
+            li.innerHTML=val.value+" <button>Delete</button>";
+            list.appendChild(li);
+            val.value="";
+        }
+        but.addEventListener("click", add);
+        list.addEventListener("click", function(e) {
+         if (e.target.tagName === "BUTTON") 
+         {
+            e.target.parentNode.remove();
+         }
+              
+         else 
+         {
+             e.target.classList.toggle("done");
+         }
+        });
+    </script>
+</body>
+</html>

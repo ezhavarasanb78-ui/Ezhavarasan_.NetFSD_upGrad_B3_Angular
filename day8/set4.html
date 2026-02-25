@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+       <!DOCTYPE html>
+<html>
+<body>
+
+  <h3>Weather Fetcher</h3>
+
+  <input id="city" placeholder="Enter city name" />
+  <button onclick="getWeatherPromise()">Get Weather (Promise)</button>
+  <button onclick="getWeatherAsync()">Get Weather (Async/Await)</button>
+
+  <pre id="output"></pre>
+
+  <script>
+    const apiKey = "YOUR_API_KEY"; 
+    const output = document.getElementById("output");
+
+
+    const getWeatherPromise = () => {
+      const city = document.getElementById("city").value.trim();
+      if (!city) return output.innerText = "Please enter a city";
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+      fetch(url)
+        .then(res => {
+          if (!res.ok) throw new Error("City not found");
+          return res.json();
+        })
+        .then(data => {
+          const report = `Weather in ${data.name}:\nTemp: ${data.main.temp}°C\nCondition: ${data.weather[0].description}`;
+          output.innerText = report;
+        })
+        .catch(err => output.innerText = `Error: ${err.message}`);
+    };
+    const getWeatherAsync = async () => {
+      const city = document.getElementById("city").value.trim();
+      if (!city) return output.innerText = "Please enter a city";
+
+      const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("City not found");
+        const data = await res.json();
+
+        const report = `Weather in ${data.name}:\nTemp: ${data.main.temp}°C\nCondition: ${data.weather[0].description}`;
+        output.innerText = report;
+      } catch (err) {
+        output.innerText = `Error: ${err.message}`;
+      }
+    };
+  </script>
+
+</body>
+</html>
+</body>
+</html>

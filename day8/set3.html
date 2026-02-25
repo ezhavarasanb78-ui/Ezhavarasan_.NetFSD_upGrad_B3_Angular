@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+          <script>
+let tasks = [];
+
+
+const addTaskCB = (task, cb) =>
+  setTimeout(() => { tasks.push(task); cb(`Added: ${task}`); }, 500);
+
+const listTaskCB = cb =>
+  setTimeout(() => cb(`Tasks: ${tasks.join(", ")}`), 500);
+
+addTaskCB("JS", msg => {
+  console.log("Callback:", msg);
+  listTaskCB(console.log);
+});
+
+
+const addTask = task =>
+  new Promise(res => setTimeout(() => {
+    tasks.push(task);
+    res(`Added: ${task}`);
+  }, 500));
+
+const listTask = () =>
+  new Promise(res => setTimeout(() =>
+    res(`Tasks: ${tasks.join(", ")}`), 500));
+
+
+(async () => {
+  console.log("Async/Await:");
+  let msg = await addTask("React");
+  console.log(msg);
+  msg = await listTask();
+  console.log(msg);
+})();
+</script>
+</body>
+</html>
