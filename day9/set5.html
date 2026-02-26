@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       
+<h2>Payment System</h2>
+<div id="result"></div>
+<script>
+class Pay {
+    pay(amount) {
+        return "Processing payment of ₹" + amount;
+    }
+}
+class Ccp extends Pay {
+    pay(amount) {
+        return "Paid ₹" + amount + " using Credit Card";
+    }
+}
+class Up extends Pay {
+    pay(amount) {
+        return "Paid ₹" + amount + " using UPI";
+    }
+}
+class Cp extends Pay {
+    pay(amount) {
+        return "Paid ₹" + amount + " using Cash";
+    }
+}
+const credit = new Ccp();
+const upi = new Up();
+const cash = new Cp();
+document.getElementById("result").innerHTML =
+    "<p>" + credit.pay(500) + "</p>" +
+    "<p>" + upi.pay(500) + "</p>" +
+    "<p>" + cash.pay(500) + "</p>";
+
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>vehicle Details</h3>
+    <div id="res"></div>
+    <script>
+        class vehicle
+        {
+            constructor(brand,speed)
+            {
+               this.brand=brand;
+               this.speed=speed;
+            }
+            show()
+            {
+                return`
+                <p><b>brand:</b>${this.brand}</p>
+                <p><b>speed:</b>${this.speed}</p>
+                `;
+            }
+        }
+        class Car extends vehicle
+        {
+            constructor(brand,speed,fuel)
+            {
+                super(brand,speed)
+                this.fuel=fuel;
+            }
+            showcar()
+            {
+                return `
+                <p><b> Fueltype : </b>${this.fuel}
+                    `;
+             }
+        }
+        const car=new Car("Maruti",200,"Diesel");
+        document.getElementById("res").innerHTML=car.show()+ car.showcar();
+    </script>
+</body>
+</html>

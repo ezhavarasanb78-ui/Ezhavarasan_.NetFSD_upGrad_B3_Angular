@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Student Details</h3>
+    <div id="res"></div>
+    <script>
+        class Stu
+        {
+            constructor(name,num,marks)
+            {
+                this.marks=marks;
+                this.name=name;
+                this.num=num;
+            }
+            getgrade()
+            {
+                if(this.marks>=90)
+                {
+                    return "A";
+                }
+                else if(this.marks>=75 && this.marks<90)
+                {
+                    return "B";
+                }
+                else if(this.marks<70 && this.marks>=50)
+                {
+                     return "C";
+                }
+                else
+                {
+                    return "Fail";
+                }
+            }
+             getdetails() {
+                return `
+                <p><b>Name:</b> ${this.name}</p>
+                <p><b>Roll No:</b> ${this.num}</p>
+                <p><b>Marks:</b> ${this.marks}</p>
+                <p><b>Grade:</b> ${this.getgrade()}</p>
+                <hr>
+                `;
+            }
+        }
+        const stu1=new Stu("Akal",7,95);
+        const stu2=new Stu("11saa",8,87);
+        document.getElementById("res").innerHTML=stu1.getdetails()+stu2.getdetails();
+    </script>
+</body>
+</html>
