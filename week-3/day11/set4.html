@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h3>TO-DO-list</h3>
+    <input type="text" id="in">
+    <button id="btn">ADD</button>
+    <ul id="li"></ul>
+    <p>Total Task: <span id="tot">0</span></p>
+    <p>Completed: <span id="com">0</span></p>
+    <script>
+          $(document).ready(function()
+          {
+            var total=0;
+            var com=0;
+            $("#btn").click(function()
+            {
+                     var value=$("#in").val();
+                     if(value!="")
+                     {
+                        $("#li").append(
+                            "<li><span class='text'> " +value +"</span><button class='del'>Delete</button></li>"
+                        );
+                        total++;
+                        $("#tot").text(total);
+                        $("#in").val("");
+                     }
+            });
+            $("#li").on("click",".text",function()
+            {
+                $(this).toggleClass("Completed");
+                if($(this).hasClass("Completed"))
+                {
+                    com++;
+                }
+                else
+                {
+                    com--;
+                }
+                $("#com").text(com);
+            });
+            $("#li").on("click",".del",function()
+            {
+                if($(this).siblings(".text").hasClass("Completed"))
+                {
+                    com--;
+                    $("#com").text(com);
+                }
+                total--;
+                $("#tot").text(total);
+                $(this).parent().remove();
+            })
+          })
+    </script>
+</body>
+</html>

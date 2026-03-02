@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+    <style>
+        .active
+        {
+            background:blanchedalmond;
+            color:black;
+        }
+        .A
+        {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>Frequently Asked Questions</h3>
+    <div class="whole">
+          <div class="faq">
+            <div class="q">What is your name?</div>
+            <div class="A">My name is Ezhavarasan</div>
+          </div>
+          <div class="faq">
+            <div class="q">What is your native?</div>
+            <div class="A">tamilnadu</div>
+          </div>
+          <div class="faq">
+            <div class="q">What is your hobbies</div>
+            <div class="A">Watching movies,Playing chess</div>
+          </div>
+          <div class="faq">
+            <div class="q">Which batch are u from?</div>
+            <div class="A">2024 Batch</div>
+          </div>
+          <div class="faq">
+            <div class="q">What is your Professional Role?</div>
+            <div class="A">Software Developer</div>
+          </div>
+    </div>
+    <script>
+        $(document).ready(function()
+        {
+            $(".q").click(function()
+            {
+                $(this).next(".A").slideToggle();
+                $(this).toggleClass("active");
+            })
+        })
+    </script>
+</body>
+</html>

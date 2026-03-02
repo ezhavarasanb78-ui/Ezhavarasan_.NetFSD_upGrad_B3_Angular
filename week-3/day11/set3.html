@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="he">
+         <h3>Items : <span id="count">o</span></h3>
+    </div>
+    <div id="pl">
+         <div>
+            <h4>Lap</h4>
+            <button class="btn">Add to cart</button>
+            <span class="msg"></span>
+         </div>
+         <div>
+            <h4>Shirt</h4>
+            <button class="btn">Add to cart</button>
+            <span class="msg"></span>
+         </div>
+         <div>
+            <h4>mobile</h4>
+            <button class="btn">Add to cart</button>
+            <span class="msg"></span>
+         </div>
+         <div>
+            <h4>watch</h4>
+            <button class="btn">Add to cart</button>
+            <span class="msg"></span>
+         </div>
+    </div>
+    <script>
+        $(document).ready(function()
+        {
+            var count=0;
+            $("#pl").on("click",".btn",function()
+            {
+                count++;
+                $("#count").text(count);
+                $(this).prop("disabled",true);
+                $(this).text("added");
+                $(this).siblings(".msg").text("Added to cart");
+            });
+        });
+    </script>
+    
+</body>
+</html>
