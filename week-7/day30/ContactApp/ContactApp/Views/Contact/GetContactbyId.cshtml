@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ContactApp.Models.ContactInfo
+<h2>Search Contact</h2>
+<form method="get">
+    <label>Enter Id</label>
+    <input type="number"name="id"/>
+    <button type="submit">Search</button>
+</form>
+
+@if(Model!=null)
+{
+    <h3>Details</h3>
+    <p>ID:@Model.Id</p>
+    <p>Name:@Model.FirstName @Model.LastName</p>
+    <p>Company: @Model.CompanyName</p>
+    <p>Email Id :@Model.EmailId</p>
+    <p>Mobile no :@Model.MobileNo</p>
+    <p>Designation:@Model.Designation</p>
+}
+else if(ViewBag!=null)
+{
+    <p>@ViewBag.Message</p>
+}

@@ -1,0 +1,27 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ContactApp.Models.ContactInfo
+<h2>Add Contact</h2>
+
+<form method="post" class="form-control">
+    <label>Id:</label>
+    <input asp-for="Id" class="form-control" /><br />
+
+    <label>First Name:</label>
+    <input asp-for="FirstName" class="form-control" /><br />
+    <label>Last Name:</label>
+    <input asp-for="LastName" class="form-control" /><br />
+    <label>Company Name:</label>
+    <input asp-for="CompanyName" class="form-control" /><br />
+    <label>Emailid:</label>
+    <input asp-for="EmailId" class="form-control" /><br />
+    <label>Mobile no:</label>
+    <input asp-for="MobileNo" class="form-control" /><br />
+    <label>Designation:</label>
+    <input asp-for="Designation" class="form-control" />
+    <button type="submit" class="btn-success">Save</button>
+
+</form>
