@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h3>Enter the Products</h3>
+<form method="post" asp-action="Index" asp-controller="Product">
+    <label>Enter Name :</label>
+    <input name="name" type="text"/>
+    <br />
+    <label>Enter Price :</label>
+    <input name="price"type="number"/>
+    <br />
+    <label>Enter Quantity</label>
+    <input name="quantity"type="number"/>
+    <button type="submit">ADD</button>
+</form> 
+<h2>Product List</h2>
+
+@if (ViewBag.Products != null && ViewBag.Products.Count > 0)
+{
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+
+        @foreach (var item in ViewBag.Products)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Price</td>
+                <td>@item.Quantity</td>
+            </tr>
+        }
+    </table>
+}
+else
+{
+    <p>No products added yet.</p>
+}

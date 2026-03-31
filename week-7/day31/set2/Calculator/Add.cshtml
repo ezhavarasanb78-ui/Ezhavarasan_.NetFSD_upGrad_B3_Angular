@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h3>Adding two Values</h3>
+<form method="post"asp-action="Add" asp-controller="Calculator">
+    <label>enter Num1 :</label>
+    <input type="number" name="num1"/>
+    <br />
+    <label>Enter num2 :</label>
+    <input type="number" name="num2"/>
+    <br />
+    <button type="submit">ADD</button>
+
+</form>
+
+@if(ViewData["Result"]!=null)
+{
+    <h3>Result :@ViewData["Result"]</h3>
+}
