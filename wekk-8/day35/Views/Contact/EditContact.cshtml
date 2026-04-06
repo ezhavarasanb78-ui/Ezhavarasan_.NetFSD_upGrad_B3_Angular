@@ -1,0 +1,68 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model ContactInfo
+
+<h2>Edit Contact</h2>
+
+<form asp-action="EditContact" method="post">
+
+    <input type="hidden" asp-for="ContactId" />
+
+    <div>
+        <label>First Name</label>
+        <input asp-for="FirstName" />
+    </div>
+
+    <div>
+        <label>Last Name</label>
+        <input asp-for="LastName" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="EmailId" />
+    </div>
+
+    <div>
+        <label>Mobile</label>
+        <input asp-for="MobileNo" />
+    </div>
+
+    <div>
+        <label>Designation</label>
+        <input asp-for="Designation" />
+    </div>
+
+    <div>
+        <label>Company</label>
+        <select asp-for="cId">
+            @foreach (var c in ViewBag.Companies)
+            {
+                <option value="@c.CompanyId"
+                        selected="@(c.CompanyId == Model.cId)">
+                    @c.CompanyName
+                </option>
+            }
+        </select>
+    </div>
+
+    <div>
+        <label>Department</label>
+        <select asp-for="dId">
+            <option value="">--Select Department--</option>
+            @foreach (var d in ViewBag.Departments)
+            {
+                <option value="@d.DepartmentId"
+                        selected="@(d.DepartmentId == Model.dId)">
+                    @d.DepartmentName
+                </option>
+            }
+        </select>
+    </div>
+
+    <br />
+    <button type="submit">Update</button>
+</form>
