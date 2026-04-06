@@ -1,0 +1,37 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model IEnumerable<EF.Models.Movie>
+
+<h2>Movie List</h2>
+
+<a href="/Movies/Create">Add New Movie</a>
+
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Release Date</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Genre</td>
+            <td>@item.ReleaseDate.ToShortDateString()</td>
+            <td>@item.Price</td>
+            <td>@item.Rating</td>
+            <td>
+                <a href="/Movies/Edit/@item.Id">Edit</a> |
+                <a href="/Movies/Delete/@item.Id">Delete</a> |
+                <a href="/Movies/Details/@item.Id">Details</a>
+            </td>
+        </tr>
+    }
+</table>

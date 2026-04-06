@@ -1,0 +1,18 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model EF.Models.Movie
+
+<h2>Movie Details</h2>
+
+<div>
+    <p><b>Title:</b> @Model.Title</p>
+    <p><b>Genre:</b> @Model.Genre</p>
+    <p><b>Release Date:</b> @Model.ReleaseDate.ToShortDateString()</p>
+    <p><b>Price:</b> @Model.Price</p>
+    <p><b>Rating:</b> @Model.Rating</p>
+</div>
+
+<a href="/Movies/Index">Back to List</a>

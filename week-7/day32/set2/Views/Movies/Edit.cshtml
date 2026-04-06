@@ -1,0 +1,42 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model EF.Models.Movie
+
+<h2>Edit Movie</h2>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Title</label>
+        <input asp-for="Title" />
+    </div>
+
+    <div>
+        <label>Genre</label>
+        <input asp-for="Genre" />
+    </div>
+
+    <div>
+        <label>Release Date</label>
+        <input asp-for="ReleaseDate" type="date" />
+    </div>
+
+    <div>
+        <label>Price</label>
+        <input asp-for="Price" />
+    </div>
+
+    <div>
+        <label>Rating</label>
+        <input asp-for="Rating" />
+    </div>
+
+    <button type="submit">Update</button>
+</form>
+
+<a href="/Movies/Index">Back to List</a>
