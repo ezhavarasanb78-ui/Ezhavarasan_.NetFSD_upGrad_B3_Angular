@@ -1,0 +1,11 @@
+﻿root = true
+
+[*.cs]
+
+dotnet_style_qualification_for_field = false:suggestion
+
+dotnet_diagnostic.CS0168.severity = warning
+
+dotnet_diagnostic.CS8602.severity = warning
+
+dotnet_diagnostic.CA1502.severity = warning
