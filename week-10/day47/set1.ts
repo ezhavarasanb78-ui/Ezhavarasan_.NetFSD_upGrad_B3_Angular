@@ -1,0 +1,22 @@
+const username:string="Ezhavarasan";
+let age:number=24;
+const email:string="ezhavarasan2003b@gmail.com";
+const issubscribed:boolean=true;
+
+let city="Banglore";
+let count=5;
+age = age + 1; 
+const userProfileMessage: string = `Hello ${username}, you are ${age} years old and your email is ${email}.`;
+const isEligibleForPremium: boolean = (age > 18) && issubscribed;
+const isAdult: boolean = age >= 18;
+const hasHighLogin: boolean = count > 3;
+console.log("User Name:", username);
+console.log("Age after increment:", age);
+console.log("Email:", email);
+console.log("Subscribed:", issubscribed);
+console.log("City (Type Inference):", city);
+console.log("Login Count (Type Inference):", count);
+console.log("User Profile Message:", userProfileMessage);
+console.log("Is Adult:", isAdult);
+console.log("Has High Login Count:", hasHighLogin);
+console.log("Eligible for Premium Plan:", isEligibleForPremium);
