@@ -1,0 +1,19 @@
+<h2>Contact List</h2>
+
+<ul>
+  <li *ngFor="let contact of contacts">
+    <b>{{ contact.name }}</b> |
+    {{ contact.email }} |
+    {{ contact.phone }}
+  </li>
+</ul>
+
+<hr>
+
+<h3>Add Contact</h3>
+
+<input [(ngModel)]="newContact.name" placeholder="Name">
+<input [(ngModel)]="newContact.email" placeholder="Email">
+<input [(ngModel)]="newContact.phone" placeholder="Phone">
+
+<button (click)="addContact()">Add</button>
